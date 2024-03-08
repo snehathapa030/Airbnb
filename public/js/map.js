@@ -16,4 +16,6 @@ mapboxgl.accessToken = mapToken;
         ))
         .addTo(map);
 
+
+        // wait ok
     
