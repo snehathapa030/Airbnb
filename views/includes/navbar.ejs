@@ -18,12 +18,14 @@
     padding: 0.5rem 3rem 0.5rem 3rem;
     font-size: 1rem;
   }
-  
+  .w{
+    color: #f47939;
+  }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><img src="/icon/logo.png" id="logo"></a>
+    <a class="navbar-brand" href="/listings"><img src="/icon/logo.png" id="logo"><b class="w">WanderLand</b></a>
 
     <!-- <div class="navbar-nav">
       <a class="nav-link" id="title" href="/listings"><b>WanderLand</b></a>
@@ -61,13 +63,13 @@
       </div>
 
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <a class="nav-link" href="/listings/new"><b>Create your home</b></a>
         <% if(!currUser) { %>
         <a class="nav-link" href="/signup"><b>Sign up</b></a>
         <a class="nav-link" href="/login"><b>Log in</b></a>
         <% } %>
         <% if(currUser) { %>
-        <a class="nav-link" href="/logout">Log out</a>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
         <% } %>
       </div>
     </div>

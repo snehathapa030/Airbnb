@@ -81,7 +81,7 @@ const initDB = async () => {
   initData.data = initData.data.map((obj) => ({
     ...obj,
     owner: "65eb9176117f4ca54ef9c79e",
-    price: obj.price * 25,
+    price: obj.price * 20,
     category: [
       `${categoryAll[Math.floor(Math.random() * 22)]}`,
       `${categoryAll[Math.floor(Math.random() * 22)]}`,
