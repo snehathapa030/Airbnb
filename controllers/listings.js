@@ -8,7 +8,6 @@ module.exports.index = async (req, res) => {
     res.render("./listings/index.ejs", {allListings});
  };
 
-
  module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
  };
@@ -39,7 +38,6 @@ module.exports.createListing = async (req, res, next) => {
     })
       .send();
        
-
    let url = req.file.path;
    let filename = req.file.filename;
 
@@ -169,3 +167,19 @@ module.exports.createListing = async (req, res, next) => {
      res.redirect("/listings");
    }
  };
+
+
+
+ 
+ module.exports.filter = async (req, res, next) => {
+    let { id } = req.params;
+    let allListings = await Listing.find({category: {$all: [id] } });
+    console.log(allListings); 
+    if (allListings.length != 0) {
+      res.locals.success = `Listings Find by ${id}`;
+      res.render("listings/index.ejs", {allListings });
+    } else {
+      req.flash("error", "Listings is not here !!!");
+      res.redirect("/listings");
+    }
+};

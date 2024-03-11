@@ -3,8 +3,12 @@
 <style>
 #filters {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
   align-items: center;
+}
+#filters::-webkit-scrollbar {
+  display: none;
 }
 .filter {
   text-align: center;
@@ -12,12 +16,28 @@
   margin-top: 2rem;
   opacity: 0.7;
 }
+.filters-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
 .filter:hover {
   opacity: 1;
   cursor: pointer;
 }
-.filter p {
-  font-size: 0.8rem;
+.filter > p {
+    display: -block;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: black;
+}
+#filters a {
+  text-decoration: none;
+  color: black;
+  width: fit-content;
 }
 .tax-info {
   display: none;
@@ -30,55 +50,197 @@
   margin-left: 4rem;
   display: flex;
   align-items: center;
+  max-width: 250px;
+  min-width: fit-content;
 }
+
+
+
 </style>
 
-    <div id="filters">
-      <div class="filter">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>Mountains</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castles</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Amazing Pools</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-cow"></i></div>
-        <p>Farms</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-regular fa-snowflake"></i></div>
-        <p>Arctic</p>
-      </div>
 
-<div class="tax-toggle">
-  <div class="form-check-reverse form-switch">
-    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-    <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+
+<div class="filters-main">
+  <div id="filters">
+    <!-- <div class="left_img_button" id="slideButton" style="display: none;">
+      <i class="fa-solid fa-angle-left"></i> 
+    </div> -->
+    <a href="/listings">
+      <div class="filter ALL ps-2 pe-2">
+        <div><img src="/icon/0.png" alt="icon" style="width: 25px; height: 25px;"></div>
+        <p style="text-decoration: none;">ALL</p>
+      </div>
+    </a>
+    <a href="/listings/filter/Beachfront">
+      <div class="filter Beachfront">
+        <div><img src="/icon/1.png" alt="icon" style="width: 25px; height: 25px;"></div>
+        <p>Beachfront</p>
+      </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Cabins">
+        <div class="filter Cabins">
+          <div><img src="/icon/2.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Cabins&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Omg">
+        <div class="filter OMG">
+          <div><img src="/icon/3.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;OMG&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Lake">
+        <div class="filter Lake">
+          <div><img src="/icon/4.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Lake&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Design">
+        <div class="filter Design">
+          <div><img src="/icon/5.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Design&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Amazing Pools">
+        <div class="filter Amazing-Pools">
+          <div><img src="/icon/6.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Amazing Pools&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Farms">
+        <div class="filter Farms">
+          <div><img src="/icon/7.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Farms&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Amazing Views">
+        <div class="filter Amazing-Views">
+          <div><img src="/icon/8.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Amazing Views&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Rooms">
+        <div class="filter Rooms">
+          <div><img src="/icon/9.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Rooms&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Lakefront">
+        <div class="filter Lakefront">
+          <div><img src="/icon/10.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Lakefront&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Tiny Homes">
+        <div class="filter Tiny-homes">
+          <div><img src="/icon/11.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Tiny homes&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Countryside">
+        <div class="filter Countryside">
+          <div><img src="/icon/12.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Countryside&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Treehouse">
+        <div class="filter Treehouse">
+          <div><img src="/icon/13.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Treehouse&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Trending">
+        <div class="filter Trending">
+          <div><img src="/icon/14.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Trending&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Tropical">
+        <div class="filter Tropical">
+          <div><img src="/icon/15.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Tropical&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/National parks">
+        <div class="filter National parks">
+          <div><img src="/icon/16.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;National parks&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Casties">
+        <div class="filter Casties">
+          <div><img src="/icon/17.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Casties&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Camping">
+        <div class="filter Camping">
+          <div><img src="/icon/18.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Camping&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Top Of The World">
+        <div class="filter Top-of-the-world">
+          <div><img src="/icon/19.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Top of the world&nbsp;</p>
+        </div>
+    </a> 
+    <a>
+      <a href="/listings/filter/Luxe">
+        <div class="filter Luxe">
+          <div><img src="/icon/20.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Luxe&nbsp;</p>
+        </div>
+    </a>
+    <a>
+      <a href="/listings/filter/Iconic Cities">
+        <div class="filter Iconic-cities">
+          <div><img src="/icon/21.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Iconic cities&nbsp;</p>
+        </div>
+    </a> 
+    <a>
+      <a href="/listings/filter/Earth Homes">
+        <div class="filter Earth-homes">
+          <div><img src="/icon/22.png" alt="icon" style="width: 25px; height: 25px;"></div>
+          <p>&nbsp;Earth homes&nbsp;</p>
+        </div>
+    </a>
+    
+    
+    <!-- <div class="right_img_button" id="slideButton">
+      <i class="fa-solid fa-angle-left"></i>
+    </div> -->
+  </div>
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+    </div>
   </div>
 </div>
 
-    </div>
+
+
+
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for(let listing of allListings) { %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
